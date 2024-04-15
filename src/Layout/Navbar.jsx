@@ -34,12 +34,14 @@ const NavBar = () => {
                 <Link to="/AllTask" className="text-decoration-none text-dark p-4">
                   <h4> All Tasks </h4>
                 </Link>
-
+               
+    
                 {/* All Task Logo */}
                 <Link to="/EditTask" className="text-decoration-none text-dark">
               {" "}
               <img src={allTaskLogo} alt="na-logo" /> {" "}
             </Link>{" "}
+
              
               <Link className="text-decoration-none text-dark d-none d-lg-block">
               </Link>

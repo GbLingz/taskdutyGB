@@ -4,10 +4,13 @@ import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useMatch } from "react-router-dom";
 import allTaskLogo from "../assets/Group 6.png";
 
 const NavBar = () => {
+
+  const isAbout = useMatch('/AllTask');
+  const isNew = useMatch ('/NewTask');
   return (
     <Navbar expand="lg" className="container mt-4">
         <Container fluid>
@@ -28,12 +31,21 @@ const NavBar = () => {
               navbarScroll
             ></Nav>
             
-                <Link to="/NewTask" className="text-decoration-none text-dark">
-                  <h4> New Task </h4>
-                </Link>
-                <Link to="/AllTask" className="text-decoration-none text-dark p-4">
-                  <h4> All Tasks </h4>
-                </Link>
+            { !isNew && 'AllTask' && (
+              
+              <Link to="/NewTask" className="text-decoration-none text-dark p-4">
+              <h4> New Task </h4>
+            </Link>
+
+            )}
+
+            {!isAbout && '/AllTask'&& (
+              <Link to="/AllTask" className="text-decoration-none text-dark p-4">
+              <h4> All Tasks </h4>
+            </Link>
+          )}
+
+                
                
     
                 {/* All Task Logo */}
